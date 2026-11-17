@@ -1,0 +1,713 @@
+:root {
+  --primary: #0f2942;
+  --primary-light: #1a3f63;
+  --accent: #0d9488;
+  --accent-soft: #e6f7f5;
+  --whatsapp: #22c55e;
+  --whatsapp-hover: #16a34a;
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(15, 41, 66, 0.07);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Cabeçalho */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 1.35rem;
+  color: var(--primary);
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-sm {
+  padding: 10px 18px;
+  font-size: 0.9rem;
+}
+
+.btn-lg {
+  padding: 15px 26px;
+  font-size: 1rem;
+}
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.25);
+}
+
+.btn-whatsapp:hover {
+  background: var(--whatsapp-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: var(--primary);
+  border: 1.5px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  background: var(--bg-alt);
+}
+
+/* Menu Mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2.5px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Hero */
+.hero {
+  padding: 64px 0 80px;
+  background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.stars {
+  color: #f59e0b;
+  letter-spacing: 1px;
+}
+
+.hero-text h1 {
+  font-size: 2.75rem;
+  line-height: 1.18;
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.hero-image-card {
+  position: relative;
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  background: #cbd5e1;
+}
+
+.floating-card {
+  position: absolute;
+  bottom: -18px;
+  left: -18px;
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 12px 30px rgba(15, 41, 66, 0.14);
+  border: 1px solid var(--border);
+}
+
+.floating-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+}
+
+.floating-card strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+.floating-card span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Seções Gerais */
+.section {
+  padding: 80px 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto 48px;
+}
+
+.section-tag {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  font-size: 2.1rem;
+  color: var(--primary);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+}
+
+/* Cards de Tratamentos */
+.treatments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.treatment-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.treatment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.card-badge {
+  align-self: flex-start;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.badge-urgent {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.treatment-card h3 {
+  font-size: 1.22rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.treatment-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+}
+
+.btn-card {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-alt);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  box-shadow: none;
+  font-size: 0.9rem;
+}
+
+.btn-card:hover {
+  background: var(--whatsapp);
+  color: #ffffff;
+  border-color: var(--whatsapp);
+}
+
+/* Diferenciais */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.feature-item {
+  background: #ffffff;
+  padding: 26px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.feature-icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+}
+
+.feature-item h3 {
+  font-size: 1.08rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.feature-item p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* Avaliações */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.review-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.google-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.review-card p {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.reviewer strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--primary);
+}
+
+.reviewer span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Especialista */
+.specialist-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.specialist-photo img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  background: #cbd5e1;
+}
+
+.specialist-info h2 {
+  font-size: 2.1rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.cro {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.specialist-info p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.specialist-list {
+  list-style: none;
+  margin-bottom: 28px;
+  display: grid;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* FAQ */
+.faq-container {
+  max-width: 780px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-icon {
+  font-size: 1.4rem;
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  padding: 0 24px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding-bottom: 20px;
+}
+
+.faq-answer p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Rodapé */
+.footer {
+  background: var(--primary);
+  color: #e2e8f0;
+  padding-top: 64px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 1fr;
+  gap: 36px;
+  padding-bottom: 48px;
+}
+
+.logo-footer {
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.footer-desc {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+}
+
+.footer h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+}
+
+.footer p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.hours {
+  margin-top: 14px;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 190px;
+  border: none;
+  border-radius: 14px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Botão Flutuante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 99;
+  padding: 0;
+}
+
+/* Responsividade */
+@media (max-width: 960px) {
+  .hero-grid,
+  .specialist-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .treatments-grid,
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .floating-card {
+    left: 12px;
+    bottom: 12px;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .header-actions .btn-sm {
+    display: none;
+  }
+
+  .treatments-grid,
+  .reviews-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image-card img,
+  .specialist-photo img {
+    height: 320px;
+  }
+}
